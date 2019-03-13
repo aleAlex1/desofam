@@ -1,0 +1,2 @@
+"# desofam"  initgit add README.mdgit commit -m "first commit"git remote add origin git@github.com:aleAlex1/desofam.gitgit push -u origin master
+"# desofam"  initgit add README.mdgit commit -m "first commit"git remote add origin git@github.com:aleAlex1/desofam.gitgit push -u origin master
