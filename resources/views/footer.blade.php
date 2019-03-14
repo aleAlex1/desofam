@@ -32,7 +32,7 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-light">Enviar</button>
+          <button type="button" class="btn btn-light" ng-click="guardar()">Enviar</button>
         </form>
       </div>
       <!-- Grid column -->
@@ -66,6 +66,6 @@
   <script type="text/javascript" src="{{asset('/js/angular.js')}}"></script>
 </body>
 </html>
-<script type="text/javascript">
-var app = angular.module('app', []);
+<script>
+  var app=angular.module('app', []);
 @show
