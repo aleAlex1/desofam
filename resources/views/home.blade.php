@@ -172,7 +172,7 @@
             <form name="formuContacto">
               <div class="form-group">
                 <label for="exampleFormControlInput1">Nombre</label>
-                <input type="text" name="nombreVal" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" ng-model="contacto.nombre" required/>
+                <input type="text" name="nombreVal" class="form-control" id="exampleFormControlInput1" ng-pattern="/^[A-Za-zñáéíóúÁÉÍÓÚ' ']{1,50}$/" placeholder="Nombre" title="En este campo solo se pueden ingresar letras" ng-model="contacto.nombre" required/>
                 <span ng-show="formuContacto.nombreVal.$dirty && formuContacto.nombreVal.$error.required" style="color: red;">Campo requerido</span>
               </div>
               <div class="form-group">
