@@ -12,15 +12,15 @@
         <form>
           <div class="form-group">
             <label for="exampleFormControlInput1">Nombre</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nombre">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" ng-model="contacto.nombre">
           </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Correo electrónico</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="correo@ejemplo.com">
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="correo@ejemplo.com" ng-model="contacto.email">
           </div>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Exprésanos tu duda o inconveniente</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ng-model="contacto.mensaje"></textarea>
           </div>
           <div class="form-group form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1" data-toggle="collapse" data-target="#nTicket" aria-expanded="false" aria-controls="collapseExample">
@@ -28,7 +28,7 @@
           </div>
           <div class="collapse" id="nTicket">
             <div class="form-group">
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="número de ticket">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Número de ticket">
             </div>
           </div>
 
