@@ -169,18 +169,21 @@
             <!-- Content -->
             <h5 class="text-uppercase"><label for="">Contáctanos</label></h5>
             <!--<p>Here you can use rows and columns here to organize your footer content.</p>-->
-            <form>
+            <form name="formuContacto">
               <div class="form-group">
                 <label for="exampleFormControlInput1">Nombre</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nombre" ng-model="contacto.nombre">
+                <input type="text" name="nombreVal" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" ng-model="contacto.nombre" required/>
+                <span ng-show="formuContacto.nombreVal.$dirty && formuContacto.nombreVal.$error.required" style="color: red;">Campo requerido</span>
               </div>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Correo electrónico</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="correo@ejemplo.com" ng-model="contacto.email">
+                <input type="email" name="emailVal" class="form-control" id="exampleFormControlInput1" placeholder="correo@ejemplo.com" ng-model="contacto.email" required/>
+                <span ng-show="formuContacto.emailVal.$dirty && formuContacto.emailVal.$error.required" style="color: red;">Campo requerido</span>
               </div>
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">Exprésanos tu duda o inconveniente</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ng-model="contacto.mensaje"></textarea>
+                <textarea class="form-control" name="mensajeVal" id="exampleFormControlTextarea1" rows="3" ng-model="contacto.mensaje" required/></textarea>
+                <span ng-show="formuContacto.mensajeVal.$dirty && formuContacto.mensajeVal.$error.required" style="color: red;">Campo requerido</span>
               </div>
               <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1" data-toggle="collapse" data-target="#nTicket" aria-expanded="false" aria-controls="collapseExample">
@@ -192,7 +195,7 @@
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-light" ng-click="guardar()">Enviar</button>
+              <button type="submit" class="btn btn-light" ng-click="guardar()" ng-disabled="!formuContacto.$valid">Enviar</button>
             </form>
           </div>
           <!-- Grid column -->
@@ -225,7 +228,10 @@
         $scope.contacto={};
 
         $scope.guardar=function(){
+          $scope.formuContacto.$setPristine();
           $http.post('/guardar',$scope.contacto).then(function(response){
+            $scope.contacto={};
+            alert("Su mensaje ha sido enviado exitosamente");
             console.log("Si lo hizo bien");
           }, function(errorResponse){
             console.log("Lo hizo mal");
@@ -233,6 +239,7 @@
 
           );
         }
+
       });
       </script>
     @endsection
