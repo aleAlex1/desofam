@@ -2,7 +2,7 @@
 @extends('header')
 
 @section('header')
-@parent
+  @parent
     <div class="" ng-controller="ctrl">
       <nav class="navbar navbar-expand-lg fixed-top" id="navbar"><!-- bg-light, navbar-light-->
           <img src="{{asset('images/DESOFAM_LOGO.png')}}" height="40" alt="Logo de DESOFAM">
@@ -65,7 +65,6 @@
               <span class="sr-only">Next</span>
             </a>-->
             </div>
-          </div>
           </div>
 
       <!--<div class="bgimg-1">
@@ -173,15 +172,15 @@
             <form>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Nombre</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nombre">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nombre" ng-model="contacto.nombre">
               </div>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Correo electrónico</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="correo@ejemplo.com">
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="correo@ejemplo.com" ng-model="contacto.email">
               </div>
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">Exprésanos tu duda o inconveniente</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ng-model="contacto.mensaje"></textarea>
               </div>
               <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1" data-toggle="collapse" data-target="#nTicket" aria-expanded="false" aria-controls="collapseExample">
@@ -193,7 +192,7 @@
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-light">Enviar</button>
+              <button type="submit" class="btn btn-light" ng-click="guardar()">Enviar</button>
             </form>
           </div>
           <!-- Grid column -->
@@ -219,7 +218,7 @@
       <!-- Copyright -->
     </footer>
     <!-- Footer -->
-
+</div>
   @section('footer')
       @parent
       app.controller('ctrl', function($scope, $http, $location){
