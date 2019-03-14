@@ -230,8 +230,8 @@
         $scope.guardar=function(){
           $scope.formuContacto.$setPristine();
           $http.post('/guardar',$scope.contacto).then(function(response){
-            alert("Su mensaje ha sido enviado exitosamente");
             $scope.contacto={};
+            alert("Su mensaje ha sido enviado exitosamente");
             console.log("Si lo hizo bien");
           }, function(errorResponse){
             console.log("Lo hizo mal");
@@ -239,6 +239,7 @@
 
           );
         }
+
       });
       </script>
     @endsection
