@@ -228,15 +228,16 @@
         $scope.contacto={};
 
         $scope.guardar=function(){
-          $scope.formuContacto.$setPristine();
-          $http.post('/guardar',$scope.contacto).then(function(response){
-            $scope.contacto={};
-            alert("Su mensaje ha sido enviado exitosamente");
-            console.log("Si lo hizo bien");
-          }, function(errorResponse){
-            console.log("Lo hizo mal");
-          }
+          $http.post('/guardar',$scope.contacto).then(
+              function(response){
+                $scope.contacto={};
+                $scope.formuContacto.$setPristine();
+                console.log("Si lo hizo bien");
+                alert("Su mensaje ha sido enviado exitosamente");
 
+              }, function(errorResponse){
+                    console.log("Lo hizo mal");
+                  }
           );
         }
 
