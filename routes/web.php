@@ -18,7 +18,7 @@ Route::get('/admin', function(){
     return view('login');
 });
 Route::get('/admin/index', function(){
-    return view('panel');
+    return view('splash');
 });
 Route::get('/admin/index/add', function(){
     return view('add');
