@@ -6,6 +6,5 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
   <script type="text/javascript" src="{{asset('/js/angular.js')}}"></script>
   <script type="text/javascript" src="{{asset('/js/main.js')}}"></script>
-  <script type="text/javascript" src="{{asset('/js/jquery.fancybox.js')}}"></script>
 </body>
 </html>

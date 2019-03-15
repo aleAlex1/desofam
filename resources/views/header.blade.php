@@ -8,7 +8,6 @@
     <title>Home</title>
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/estilos.css">
-    <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css">
   </head>
   <body>
 @show
