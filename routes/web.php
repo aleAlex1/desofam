@@ -17,5 +17,14 @@ Route::get('/', function () {
 Route::get('/admin', function(){
     return view('login');
 });
+Route::get('/admin/index', function(){
+    return view('panel');
+});
+Route::get('/admin/index/add', function(){
+    return view('add');
+});
+Route::get('/admin/index/show', function(){
+    return view('show');
+});
 
 Route::post('/guardar','contactos@store');

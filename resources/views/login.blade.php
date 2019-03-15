@@ -24,17 +24,7 @@
 @section('footer')
     @parent
     app.controller('ctrl', function($scope, $http, $location){
-      $scope.contacto={};
-
-      $scope.guardar=function(){
-        $http.post('/guardar',$scope.contacto).then(function(response){
-          console.log("Si lo hizo bien");
-        }, function(errorResponse){
-          console.log("Lo hizo mal");
-        }
-
-        );
-      }
+      
     });
     </script>
   @endsection
