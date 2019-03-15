@@ -152,6 +152,7 @@
                 alert("Su mensaje ha sido enviado exitosamente");
 
               }, function(errorResponse){
+                    $scope.formuContacto.$setPristine();
                     console.log("Lo hizo mal");
                   }
           );
