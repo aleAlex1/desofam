@@ -1,19 +1,14 @@
-body {
-  /*background-color: #061339;*/
-}
-
 body, html {
   height: 100%;
 }
 
 li a{
   color: black;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 #navbar {
   background-color: #A39B37;
-  opacity: 0.70;
 }
 
 #copyright {
@@ -26,13 +21,14 @@ li a{
 }
 
 .texto {
-  color: #777;
+  color: black;
   background-color:white;
   text-align: center;
   padding:50px 80px;
   text-align: justify;
-  width: 90%;
+  width: 80%;
   border-radius: 5px;
+  opacity: 0.80;
 }
 
 .texto h3 {
@@ -61,8 +57,8 @@ li a{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
+
 .bgimg-1 {
   background-image: url("/images/working.jpg");
   min-height: 100%;
@@ -94,6 +90,7 @@ li a{
   font-size: 25px;
   letter-spacing: 10px;
   border-radius: 5px;
+  opacity: inherit;
 }
 
 .caption span.subTitle {
@@ -106,9 +103,9 @@ li a{
 }
 
 @media only screen and (max-device-width: 1024px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
+  /* .bgimg-1, .bgimg-2, .bgimg-3 {
     background-attachment: scroll;
-  }
+  } */
   #mapa {
     width: 300px;
   }
