@@ -11,10 +11,7 @@
 </div>
 @section('footer')
     @parent
-    app.controller('ctrl', function($scope, $http, $location){
 
-    });
-    </script>
     @endsection
   @endsection
 @endsection
