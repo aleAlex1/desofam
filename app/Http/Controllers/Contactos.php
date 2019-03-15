@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Contacto;
+
+use App\Http\Controllers\Contactos;
+
 class Contactos extends Controller
 {
     /**
@@ -34,7 +38,13 @@ class Contactos extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos=new Contacto();
+
+        $datos->nombre=$request->input('nombre');
+        $datos->email=$request->input('email');
+        $datos->mensaje=$request->input('mensaje');
+
+        $datos->save();
     }
 
     /**
