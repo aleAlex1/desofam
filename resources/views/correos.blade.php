@@ -10,9 +10,9 @@
   <table class="table table-hover col-lg-12">
     <thead class="thead-dark">
       <tr>
-        <th>Nombre</th>
-        <th>Usuario</th>
-        <th>Grupo</th>
+        <th>Correo</th>
+        <th>Mensaje</th>
+        <th class="action">Estado</th>
         <th colspan="2" class="action">Acciones</th>
       </tr>
     </thead>

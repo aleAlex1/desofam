@@ -17,8 +17,8 @@
           <div class="collapse" id="collapseConf">
             <div class="card card-body">
               <ul>
-                <li><a href="#" ng-click="">Mensajes nuevos</a></li>
-                <li><a href="#" ng-click="">Mensajes con ticket</a></li>
+                <li><a href="{{ url('/admin/index/correos') }}" ng-click="">Mensajes nuevos</a></li>
+                <li><a href="{{ url('/admin/index/tickets') }}" ng-click="">Mensajes con ticket</a></li>
               </ul>
             </div>
           </div>

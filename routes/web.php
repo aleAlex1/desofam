@@ -26,5 +26,11 @@ Route::get('/admin/index/add', function(){
 Route::get('/admin/index/show', function(){
     return view('show');
 });
+Route::get('/admin/index/correos', function(){
+    return view('correos');
+});
+Route::get('/admin/index/tickets', function(){
+    return view('tickets');
+});
 
 Route::post('/guardar','contactos@store');
