@@ -28,7 +28,7 @@
     <select class="form-control" name="grupo" id="grupo" ng-model="user.group">
       @foreach($groups as $grupo)
         <option value="{{$grupo->id}}">{{$grupo->nombre}}</option>
-        @endforeach
+      @endforeach
     </select>
   </div>
   <div class="botones col-lg-10">

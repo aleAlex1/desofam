@@ -21,11 +21,9 @@ Route::get('/admin/index', function(){
     return view('splash');
 });
 Route::get('/admin/index/add', 'Usuarios@index')->name('add'); //vista de agregar usuario
-Route::post('/guardarUsuario', 'Usuarios@store');//Metodo para agregar usuario 
+Route::post('/guardarUsuario', 'Usuarios@store');//Metodo para agregar usuario
 
-Route::get('/admin/index/show', function(){
-    return view('show');
-});
+Route::get('/admin/index/show', 'Usuarios@getUsers')->name('showUsr');
 Route::get('/admin/index/correos', function(){
     return view('correos');
 });

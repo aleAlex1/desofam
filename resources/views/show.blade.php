@@ -6,29 +6,28 @@
 @parent
 @section('panel')
 @parent
-<div class="adminShow col-lg-10">
+<div class="adminShow col-lg-8">
   <table class="table table-hover col-lg-12">
     <thead class="thead-dark">
       <tr>
         <th>Nombre</th>
-        <th>Usuario</th>
+        <th>Correo</th>
         <th>Grupo</th>
         <th colspan="2" class="action">Acciones</th>
       </tr>
     </thead>
-    <tbody ng-repeat="filter:buscarLib as res">
-      <tr ng-click="">
-        <td></td>
-        <td></td>
-        <td></td>
+    <tbody>
+      @foreach($usr as $u)
+      <tr>
+          <td>{{$u->name}}</td>
+          <td>{{$u->email}}</td>
+          <td>{{$u->group}}</td>
+          <td><button type="button" name="btnEdit" class="btn btn-outline-primary" ng-click="edit({{$u->id}})">Editar</button></td>
+          <td><button type="button" name="btnDelete" class="btn btn-outline-danger" ng-click="delete({{$u->id}})">Eliminar</button></td>
       </tr>
+      @endforeach
     </tbody>
-    <tbody ng-if="!res.length">
-         <tr>
-             <td colspan="4" align="center" class="table-danger">No hay registros</td>
-         </tr>
-      </tbody>
-    </table>
+  </table>
 </div>
 @section('footer')
     @parent

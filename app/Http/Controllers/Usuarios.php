@@ -93,4 +93,15 @@ class Usuarios extends Controller
     {
         //
     }
+
+    public function getUsers(){
+
+      $usr= DB::table('users')
+      ->select('users.id','name','email','grupos.nombre as group')
+      ->join('grupos', 'grupos.id','=','users.grupo')
+      ->where('grupo','>',0)
+      ->get();
+      return view('show',compact('usr'));
+    }
+
 }
