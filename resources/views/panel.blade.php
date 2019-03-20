@@ -8,7 +8,7 @@
           <div class="collapse" id="collapseCat">
             <div class="card card-body">
               <ul>
-                <li><a href="{{ url('/admin/index/add') }}" ng-click="">Agregar</a></li>
+                <li><a href="{{ route('add') }}" ng-click="">Agregar</a></li>
                 <li><a href="{{ url('/admin/index/show') }}" ng-click="">Ver</a></li>
               </ul>
             </div>

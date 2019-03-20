@@ -1,6 +1,7 @@
 var app=angular.module('app', []);
 app.controller('ctrl', function($scope, $http, $location){
   $scope.contacto={};
+  $scope.user={};
 
   $scope.guardar=function(){
     $http.post('/guardar',$scope.contacto).then(
@@ -12,6 +13,20 @@ app.controller('ctrl', function($scope, $http, $location){
 
         }, function(errorResponse){
               $scope.formuContacto.$setPristine();
+              console.log("Lo hizo mal");
+            }
+    );
+  }
+
+  $scope.guardarUsuario=function(){
+    $http.post("/guardarUsuario",$scope.user).then(
+        function(response){
+          $scope.user={};
+          $scope.frmUser.$setPristine();
+          alert("Su mensaje ha sido enviado exitosamente");
+
+        }, function(errorResponse){
+              $scope.frmUser.$setPristine();
               console.log("Lo hizo mal");
             }
     );

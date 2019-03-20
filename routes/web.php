@@ -20,9 +20,9 @@ Route::get('/admin', function(){
 Route::get('/admin/index', function(){
     return view('splash');
 });
-Route::get('/admin/index/add', function(){
-    return view('add');
-});
+Route::get('/admin/index/add', 'Usuarios@index')->name('add'); //vista de agregar usuario
+Route::post('/guardarUsuario', 'Usuarios@store');//Metodo para agregar usuario 
+
 Route::get('/admin/index/show', function(){
     return view('show');
 });
