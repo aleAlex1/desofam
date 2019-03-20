@@ -9,7 +9,7 @@
             <div class="card card-body">
               <ul>
                 <li><a href="{{ route('add') }}" ng-click="">Agregar</a></li>
-                <li><a href="{{ url('/admin/index/show') }}" ng-click="">Ver</a></li>
+                <li><a href="{{ route('showUsr') }}" ng-click="">Ver</a></li>
               </ul>
             </div>
           </div>
@@ -17,7 +17,7 @@
           <div class="collapse" id="collapseConf">
             <div class="card card-body">
               <ul>
-                <li><a href="{{ url('/admin/index/correos') }}" ng-click="">Mensajes nuevos</a></li>
+                <li><a href="{{ route('mails') }}" ng-click="">Mensajes nuevos</a></li>
                 <li><a href="{{ url('/admin/index/tickets') }}" ng-click="">Mensajes con ticket</a></li>
               </ul>
             </div>

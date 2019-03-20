@@ -31,4 +31,13 @@ app.controller('ctrl', function($scope, $http, $location){
             }
     );
   }
+
+  $scope.edit=function(id){
+    alert("Vas a editar el usuario "+id)
+  }
+
+  $scope.delete=function(id){
+    alert("Vas a eliminar el usuario "+id)
+  }
+
 });

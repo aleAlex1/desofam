@@ -16,18 +16,17 @@
         <th colspan="2" class="action">Acciones</th>
       </tr>
     </thead>
-    <tbody ng-repeat="filter:buscarLib as res">
-      <tr ng-click="">
-        <td></td>
-        <td></td>
-        <td></td>
+    <tbody>
+      @foreach($mails as $m)
+      <tr>
+          <td>{{$m->email}}</td>
+          <td>{{$m->mensaje}}</td>
+          <td>{{$m->estado}}</td>
+          <td><button type="button" name="btnEdit" class="btnResponder" ng-click="responder({{$m->id}})"></button></td>
+          <td><button type="button" name="btnDelete" class="btnDelete" ng-click="eliminar({{$m->id}})"></button></td>
       </tr>
+      @endforeach
     </tbody>
-    <tbody ng-if="!res.length">
-         <tr>
-             <td colspan="4" align="center" class="table-danger">No hay registros</td>
-         </tr>
-      </tbody>
     </table>
 </div>
 @section('footer')
