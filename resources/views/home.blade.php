@@ -4,59 +4,68 @@
 @section('header')
   @parent
     <div class="" ng-controller="ctrl">
-      <nav class="navbar navbar-expand-lg fixed-top d-flex justify-content-center" id="navbar">
-          <a class="navbar-brand" href="#"><img src="{{asset('images/DESOFAM_LOGO.png')}}" height="40" alt="Logo de DESOFAM"></a>
-          <div class="collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#portfolio">Portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#footer">Contacto</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Acerca de
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#nosotros">¿Quiénes somos?</a>
-                  <a class="dropdown-item" href="#mision">Misión</a>
-                  <a class="dropdown-item" href="#vision">Visión</a>
-                  <a class="dropdown-item" href="#pFrecuentes">Preguntas frecuentes</a>
-                </div>
-              </li>
-            </ul>
+      <nav id="navbar" class="navbar navbar-light bg-transparent fixed-top">
+      <a class="navbar-brand" href="#">
+        <img src="{{asset('images/DESOFAM_LOGO.png')}}" width="150" alt="">
+      </a>
+      <ul class="nav nav-pills">
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#portfolio">Portafolio</a>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#mision">Misión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#vision">Visión</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="#somos">¿Quiénes somos?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#portfolio">Portafolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#opiniones">Opiniones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#faq">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#footer">Contáctanos</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#ubicacion">Ubicación</a>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Acerca de</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#one">one</a>
+            <a class="dropdown-item" href="#two">two</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#three">three</a>
           </div>
-        </nav>
+        </li> -->
+      </ul>
+    </nav>
 
-        <div class="bd-example w-100">
-          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="{{asset('images/4.png')}}" class="d-block w-100 imgCarrusel" alt="Proyecto chido">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Primer noticia</h5>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('images/1.jpg')}}" class="d-block w-100 imgCarrusel" alt="Segundo proyecto chido" id="">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Segunda noticia</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    <div class="bgimg-2" id="nosotros">
+    <img src="{{asset('images/technologyBanner.jpg')}}" alt="Banner" class="vh-100 w-100">
+    <!-- <div class="centered">
+      <p class="text-center">Bienvenido</p>
+      <p>Tenemos las herramientas para resolver tu problema</p>
+    </div> -->
+
+    <div class="imgFooter">
+      <p>11-234-2552</p>
+    </div>
+
+    <div class="container-fluid bg-light">
+      <div class="container text-justify p-5" id="somos">
+        <h2 class="text-center">¿Quiénes somos?</h2>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus felis libero, suscipit non euismod ac, lobortis a lectus. Proin a libero nec arcu tincidunt tincidunt. Nunc lobortis eros metus, eget hendrerit magna condimentum congue. Morbi ac nisi finibus augue egestas aliquet et sit amet lectus. Suspendisse ut erat quis risus porttitor rutrum ac bibendum mauris. Donec magna lacus, aliquam nec mollis sit amet, vehicula quis ex. Morbi vitae eros id odio ornare vestibulum. Curabitur tempor elit id ipsum posuere euismod. Cras ornare convallis egestas. Quisque interdum non metus a scelerisque. Nunc leo nulla, iaculis et leo eget, sagittis pellentesque turpis. Proin sed hendrerit leo. Sed feugiat leo a arcu rutrum, vitae auctor mi laoreet. Nunc eget ex molestie, egestas tortor vel, venenatis urna. Quisque accumsan pharetra purus, eget cursus sem sodales eu. Phasellus consequat pulvinar sem vitae varius. Praesent nisi ex, congue id aliquet a, tristique vitae odio. Donec justo arcu, interdum ut metus sit amet, rhoncus suscipit arcu. Quisque semper efficitur purus, fringilla maximus lectus lacinia sit amet. Aenean consequat ultrices libero a laoreet. Nulla molestie tellus eget nunc scelerisque, imperdiet volutpat nisi ultricies. In a fringilla turpis. </p>
+      </div>
+    </div>
+
+    <!-- <div class="bgimg-2" id="nosotros">
       <div class="caption">
         <span class="border">¿Quiénes somos?</span>
       </div>
@@ -66,31 +75,41 @@
       <div class="texto">
         <p>Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</p>
       </div>
-    </div>
+    </div> -->
 
-    <div class="bgimg-2">
+    <!-- <div class="container-fluid bg-light">
+      <div class="container text-justify p-5" id="somos">
+        <h1 class="text-center">¿A dónde queremos llegar?</h1>
+      </div>
+    </div> -->
+
+
+    <div class="">
       <div class="container">
+        <h2 class="text-center">¿A dónde queremos llegar?</h2>
         <div class="row">
           <div class="col-sm">
-            <div class="bgimg-2" id="mision">
+            <!-- <div class="" id="mision">
               <div class="caption">
                 <span class="border">Misión</span>
               </div>
-            </div>
-            <div class="bgimg-2 d-flex justify-content-center">
+            </div> -->
+            <div class="d-flex justify-content-center">
               <div class="texto">
+                <h3>Misión</h3>
                 <p>Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</p>
               </div>
             </div>
           </div>
           <div class="col-sm">
-            <div class="bgimg-2" id="vision">
+            <!-- <div class="" id="vision">
               <div class="caption">
                 <span class="border">Visión</span>
               </div>
-            </div>
-            <div class="bgimg-2 d-flex justify-content-center">
+            </div> -->
+            <div class="d-flex justify-content-center">
               <div class="texto">
+                <h3>Visión</h3>
                 <p>Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</p>
               </div>
             </div>
@@ -99,7 +118,7 @@
       </div>
     </div>
 
-    <div class="bgimg-2" id="portfolio">
+    <div class="bgimg-2" id="portfolio" style="height: 150px;">
       <div class="caption">
         <span class="border">Portafolio</span>
       </div>
@@ -109,18 +128,52 @@
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{{asset('images/sistema_geriatrico_logo.png')}}" alt="Card image cap">
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h4>Sistema geriátrico</h4>
+          <p class="card-text">Éste sistema brinda la capacidad de gestionar citas eficientemente.</p>
+        </div>
+      </div>
+    </div>
+    <div class="bgimg-2">
+      <!-- <div class="caption">
+        <span class="border">Portafolio</span>
+      </div> -->
+    </div>
+
+    <div class="container-fluid bg-white" id="opiniones">
+      <div class="container text-justify p-5" id="somos">
+        <h2 class="text-center">¿Qué dicen nuestros clientes?</h2>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="..." alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="..." alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="..." alt="Third slide">
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="bgimg-2" id="pFrecuentes">
+    <!-- <div class="bgimg-2" id="faq">
       <div class="caption">
         <span class="border">
           <a data-toggle="collapse" href="#collapseFrecuentes" role="button" aria-expanded="false" aria-controls="collapseFrecuentes">
             Preguntas frecuentes
           </a>
         </span>
+      </div>
+    </div> -->
+
+    <div class="container-fluid bg-light">
+      <div class="container text-justify p-5" id="faq">
+        <h2 class="text-center"><a data-toggle="collapse" href="#collapseFrecuentes" role="button" aria-expanded="false" aria-controls="collapseFrecuentes" title="Click para ver más">
+          Preguntas frecuentes
+        </a></h2>
+
       </div>
     </div>
 
@@ -138,6 +191,7 @@
           <br>8. nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</p>
       </div>
     </div>
+
     <!-- Footer -->
     <footer class="page-footer font-small bg-dark text-light pt-4" id="footer">
       <!-- Footer Links -->
@@ -178,6 +232,7 @@
               <button type="submit" class="btn btn-light" ng-click="guardar()" ng-disabled="!formuContacto.$valid">Enviar</button>
             </form>
           </div>
+
           <!-- Grid column -->
           <hr class="clearfix w-100 d-md-none pb-3">
           <!-- Grid column -->
