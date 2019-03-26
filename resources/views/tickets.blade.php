@@ -17,18 +17,28 @@
         <th colspan="2" class="action">Acciones</th>
       </tr>
     </thead>
-    <tbody ng-repeat="filter:buscarLib as res">
-      <tr ng-click="">
-        <td></td>
-        <td></td>
-        <td></td>
+    <!-- Lo comente para hacer una prueba -->
+    <!-- <tbody ng-repeat="filter:buscarLib as res"> -->
+    <tbody>
+      <!-- Lo comente para hacer una prueba -->
+      <!-- <tr ng-click=""> -->
+      @foreach($ticketsitos as $t)
+      <tr>
+        <td>{{$t->ticket_relacionado}}</td>
+        <td>{{$t->email}}</td>
+        <td>{{$t->mensaje}}</td>
+        <td>{{$t->estado}}</td>
+        <td><button type="button" name="btnEdit" class="btnResponder" ng-click="responder({{$t->id}})"></button></td>
+        <td><button type="button" name="btnDelete" class="btnDelete" ng-click="eliminar({{$t->id}})"></button></td>
       </tr>
+      @endforeach
     </tbody>
-    <tbody ng-if="!res.length">
+    <!-- Lo comente para hacer pruebas -->
+    <!-- <tbody ng-if="!res.length">
          <tr>
              <td colspan="5" align="center" class="table-danger">No hay registros</td>
          </tr>
-      </tbody>
+      </tbody> -->
     </table>
 </div>
 @section('footer')

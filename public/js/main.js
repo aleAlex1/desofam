@@ -3,6 +3,8 @@ app.controller('ctrl', function($scope, $http, $location){
   $scope.contacto={};
   $scope.user={};
 
+
+
   $scope.guardar=function(){
     $http.post('/guardar',$scope.contacto).then(
         function(response){
@@ -14,8 +16,9 @@ app.controller('ctrl', function($scope, $http, $location){
         }, function(errorResponse){
               $scope.formuContacto.$setPristine();
               console.log("Lo hizo mal");
-            }
+        }
     );
+
   }
 
   $scope.guardarUsuario=function(){

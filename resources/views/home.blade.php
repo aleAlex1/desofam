@@ -101,7 +101,7 @@
 
     <div class="bgimg-2" id="portfolio">
       <div class="caption">
-        <span class="border">Portfolio</span>
+        <span class="border">Portafolio</span>
       </div>
     </div>
 
@@ -166,12 +166,12 @@
                 <span ng-show="formuContacto.mensajeVal.$dirty && formuContacto.mensajeVal.$error.required" style="color: red;">Campo requerido</span>
               </div>
               <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1" data-toggle="collapse" data-target="#nTicket" aria-expanded="false" aria-controls="collapseExample">
+              <input type="checkbox"  class="form-check-input" id="exampleCheck1" data-toggle="collapse" data-target="#nTicket" aria-expanded="false" aria-controls="collapseExample">
               <label class="form-check-label" for="exampleCheck1">Tengo un número de ticket</label>
               </div>
               <div class="collapse" id="nTicket">
                 <div class="form-group">
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="número de ticket">
+                  <input type="text" ng-model="contacto.ticket_relacionado" class="form-control" id="exampleFormControlInput1" ng-pattern="/^[0-9]{1,10}$/" title="Solo puede ingresar números" placeholder="Número de ticket">
                 </div>
               </div>
 
