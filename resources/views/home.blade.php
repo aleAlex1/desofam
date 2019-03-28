@@ -4,20 +4,11 @@
 @section('header')
   @parent
     <div class="" ng-controller="ctrl">
-      <nav id="navbar" class="navbar navbar-light bg-transparent fixed-top">
+      <nav id="navbarHome" class="navbar navbar-light bg-transparent fixed-top">
       <a class="navbar-brand" href="#">
         <img src="{{asset('images/DESOFAM_LOGO.png')}}" width="150" alt="">
       </a>
       <ul class="nav nav-pills">
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#portfolio">Portafolio</a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#mision">Misión</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#vision">Visión</a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="#somos">¿Quiénes somos?</a>
         </li>
@@ -33,18 +24,6 @@
         <li class="nav-item">
           <a class="nav-link" href="#footer">Contáctanos</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#ubicacion">Ubicación</a>
-        </li> -->
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Acerca de</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#one">one</a>
-            <a class="dropdown-item" href="#two">two</a>
-            <div role="separator" class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#three">three</a>
-          </div>
-        </li> -->
       </ul>
     </nav>
 
@@ -65,35 +44,11 @@
       </div>
     </div>
 
-    <!-- <div class="bgimg-2" id="nosotros">
-      <div class="caption">
-        <span class="border">¿Quiénes somos?</span>
-      </div>
-    </div>
-
-    <div class="bgimg-2 d-flex justify-content-center">
-      <div class="texto">
-        <p>Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</p>
-      </div>
-    </div> -->
-
-    <!-- <div class="container-fluid bg-light">
-      <div class="container text-justify p-5" id="somos">
-        <h1 class="text-center">¿A dónde queremos llegar?</h1>
-      </div>
-    </div> -->
-
-
     <div class="">
       <div class="container">
         <h2 class="text-center">¿A dónde queremos llegar?</h2>
         <div class="row">
           <div class="col-sm">
-            <!-- <div class="" id="mision">
-              <div class="caption">
-                <span class="border">Misión</span>
-              </div>
-            </div> -->
             <div class="d-flex justify-content-center">
               <div class="texto">
                 <h3>Misión</h3>
@@ -102,11 +57,6 @@
             </div>
           </div>
           <div class="col-sm">
-            <!-- <div class="" id="vision">
-              <div class="caption">
-                <span class="border">Visión</span>
-              </div>
-            </div> -->
             <div class="d-flex justify-content-center">
               <div class="texto">
                 <h3>Visión</h3>
@@ -134,26 +84,41 @@
       </div>
     </div>
     <div class="bgimg-2">
-      <!-- <div class="caption">
-        <span class="border">Portafolio</span>
-      </div> -->
     </div>
 
     <div class="container-fluid bg-white" id="opiniones">
       <div class="container text-justify p-5" id="somos">
         <h2 class="text-center">¿Qué dicen nuestros clientes?</h2>
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="..." alt="First slide">
+              <div class="container text-center">
+                <img src="{{asset('images/john.jpg')}}" alt="" class="profilePicReview">
+                <p>Muy buena empresa. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio.</p>
+              </div>
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="..." alt="Second slide">
+              <div class="container text-center">
+                <img src="{{asset('images/john.jpg')}}" alt="" class="profilePicReview">
+                <p>Muy buena empresa 2. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio.</p>
+              </div>
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="..." alt="Third slide">
+              <div class="container text-center">
+                <img src="{{asset('images/john.jpg')}}" alt="" class="profilePicReview">
+                <p>Muy buena empresa 3. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio.</p>
+              </div>
             </div>
           </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
     </div>
