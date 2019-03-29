@@ -51,6 +51,7 @@ app.controller('ctrl', function($scope, $http, $location){
     else{
       $scope.confirm=false;
     }
+  }
   $scope.responder = function(id) {
     console.log(id);
     $http.post("/guardarUsuario",$scope.user).then(
