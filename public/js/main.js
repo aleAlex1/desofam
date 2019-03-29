@@ -7,11 +7,16 @@ app.controller('ctrl', function($scope, $http, $location){
   $scope.guardar=function(){
     $http.post('/guardar',$scope.contacto).then(
         function(response){
-          $scope.contacto={};
-          $scope.formuContacto.$setPristine();
-          console.log("Si lo hizo bien");
-          alert("Su mensaje ha sido enviado exitosamente");
-
+          if(response.data==1){
+            $scope.contacto={};
+            $scope.formuContacto.$setPristine();
+            console.log("Si lo hizo bien");
+            alert("Su mensaje ha sido enviado exitosamente");
+          }
+          else{
+            alert("El ticket no existe en nuestros registros");
+          }
+          console.log(response);
         }, function(errorResponse){
               $scope.formuContacto.$setPristine();
               console.log("Lo hizo mal");
