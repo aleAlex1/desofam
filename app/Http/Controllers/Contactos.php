@@ -52,10 +52,7 @@ class Contactos extends Controller
         $datos->email=$request->input('email');
         $datos->mensaje=$request->input('mensaje');
         $datos->ticket_relacionado=$request-> input('ticket_relacionado') ? : 0;
-
-
-        // $datos->ticket_relacionado=$request->input('ticket_relacionado');
-
+        $datos->state=0;
         $datos->save();
     }
 
