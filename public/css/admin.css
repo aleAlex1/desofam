@@ -1,0 +1,39 @@
+.logo{width: 300px;height: 76px;background-image:  url("/images/logo.png");margin-bottom: 10px;margin-left: auto;margin-right: auto;}
+.loginContainer{background-color: #F5F5F5;height: 100vh;padding-top: 50px;}
+.login{text-align: justify;margin-left: auto;margin-right: auto;background-color:#F5F5F5; border-radius: 5px; background-color: #FFF;padding: 15px;font-weight: bold;border: 1px solid #040269}
+.mensaje{color: red; margin-top: 10px;text-align: right;}
+
+.panelContainer{padding: 0; display: inline-block;top: 0;}
+.leftMenu{width: 12vw;height: 100vh;margin: 0;padding-top: 10px;background-color: #cdd5e0; border-right: 1px solid black; position: fixed;top: 0}
+.logoPanel{width: 11vw; height: 70px;background-image: url("/images/logo.png");background-repeat: no-repeat;background-size: contain;margin-bottom: 10px;margin-left: auto;margin-right: auto;}
+#opciones  li{cursor: pointer;}
+.adminAdd{display: inline-block; position: absolute; padding-top: 25px; margin-top: 25px; margin-left: 12vw;}
+.adminAdd .form-group{display: inline-block!important;}
+.botones{text-align: right;position: relative;}
+.adminShow{display: inline-block; position: absolute; padding-top: 25px;margin-top: 25px; margin-left: 12vw;}
+.splash{background-color: #f8fafc;margin-top: 25px;}
+.has-error span{color: red;}
+.btnEdit{background: url("/images/edit.png"); width: 24px; height: 24px; border: none;}
+.btnDelete{background: url("/images/delete.png"); width: 24px; height: 24px; border: none;}
+.btnResponder{background: url("/images/responder.png"); width: 24px; height: 24px; border: none;}
+.btnEdit:hover,.btnDelete:hover,.btnResponder:hover{transform: scale(1.2);}
+.barraUsuario{height: 40px;display: inline-block;border-bottom:1px solid black;position: absolute;width: calc(100vw - 12vw); background-color: #0864a3; margin-left: 12vw;}
+.barraUsuario a{color: white;transition:.2s;text-decoration: none; float: right;}
+.barraUsuario a:hover{color: #ffa800;}
+.barraUsuario a,p{display: inline-block;margin-top: 8px; margin-right: 10px;}
+.barraUsuario p{color: white; margin-left:20px;}
+.barraUsuario p a{margin:0; margin-left: 15px;}
+.checkbox{margin-left: 15px;}
+
+.icon {
+    background: url("/images/view.png");
+    position:absolute;
+    bottom:15px;
+    right:20px;
+    width:24px;
+    height:24px;
+    z-index: 2;
+}
+.form-group{padding-bottom: 10px;}
+.danger{color: red; position: absolute;}
+.msjPass{float: right;position: relative;}
