@@ -12,7 +12,7 @@
       <tr>
         <th>Correo</th>
         <th>Mensaje</th>
-        <th class="action">Estado</th>
+        <th class="action" colspan="2">Estado</th>
         <th colspan="2" class="action">Acciones</th>
       </tr>
     </thead>
@@ -22,6 +22,7 @@
           <td>{{$m->email}}</td>
           <td>{{$m->mensaje}}</td>
           <td>{{$m->estado}}</td>
+          <td></td>
           <td><button type="button" name="btnEdit" class="btnResponder" ng-click="responder({{$m->id}})"></button></td>
           <td><button type="button" name="btnDelete" class="btnDelete" ng-click="eliminar({{$m->id}})"></button></td>
       </tr>

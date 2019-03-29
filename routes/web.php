@@ -21,6 +21,12 @@ Route::get('/admin/index', function(){
     return view('splash');
 });
 Route::get('/admin/index/add', 'Usuarios@index')->name('add'); //vista de agregar usuario
+Route::get('/admin/index/edit/{id}',  array('as' => 'id', 'uses' => 'Usuarios@show'));
+Route::get('/admin/index/editar/{id}',  array('as' => 'id', 'uses' => 'Usuarios@editar'));
+Route::get('error/{id}', function ($id) {
+    return redirect('/admin/index/editar/'.$id);
+});
+Route::post('/admin/index/save/{id}',  array('as' => 'id', 'uses' => 'Usuarios@saveEdit'));
 Route::post('/guardarUsuario', 'Usuarios@store');//Metodo para agregar usuario
 
 Route::get('/admin/index/show', 'Usuarios@getUsers')->name('showUsr');
