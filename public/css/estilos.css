@@ -145,13 +145,14 @@ body, html {
 .btnDelete{background: url("/images/delete.png"); width: 24px; height: 24px; border: none;}
 .btnResponder{background: url("/images/responder.png"); width: 24px; height: 24px; border: none;}
 .btnEdit:hover,.btnDelete:hover,.btnResponder:hover{transform: scale(1.2);}
-.barraUsuario{height: 40px;display: inline-block;border-bottom:1px solid black;position: absolute;width: calc(100vw - 12vw); background-color: #0864a3; margin-left: 12vw;}
+.barraUsuario{height: 40px;display: inline-block;border-bottom:1px solid black;position: absolute;width: calc(100vw - 12vw - 1px); background-color: #0864a3; margin-left: calc(12vw - 4px);}
 .barraUsuario a{color: white;transition:.2s;text-decoration: none; float: right;}
 .barraUsuario a:hover{color: #ffa800;}
 .barraUsuario a,p{display: inline-block;margin-top: 8px; margin-right: 10px;}
 .barraUsuario p{color: white; margin-left:20px;}
 .barraUsuario p a{margin:0; margin-left: 15px;}
 .checkbox{margin-left: 15px;}
+.user{display: inline-block;margin-top: 8px;}
 
 .icon {
     background: url("/images/view.png");

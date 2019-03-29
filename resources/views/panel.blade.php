@@ -27,7 +27,9 @@
   </div>
 </div>
 <div class="barraUsuario">
-  <p>Usuario: <a href="/admin/index/edit/11">Yair</a></p>
+  <div class="user">
+    <p>Usuario: <a href="/admin/index/edit/11">Yair</a></p>
+  </div>
   <a href="#">Cerrar sesión</a>
 </div>
 @show
