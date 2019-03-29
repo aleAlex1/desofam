@@ -3,8 +3,6 @@ app.controller('ctrl', function($scope, $http, $location){
   $scope.contacto={};
   $scope.user={};
 
-
-
   $scope.guardar=function(){
     $http.post('/guardar',$scope.contacto).then(
         function(response){
