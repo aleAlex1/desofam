@@ -31,8 +31,20 @@ Route::post('/guardarUsuario', 'Usuarios@store');//Metodo para agregar usuario
 
 Route::get('/admin/index/show', 'Usuarios@getUsers')->name('showUsr');
 Route::get('/admin/index/correos', 'Correos@index')->name('mails');
-Route::get('/admin/index/tickets', function(){
-    return view('tickets');
+Route::get('/admin/index/tickets', 'Contactos@index')->name('ticketsitos');
+
+// Route::get('/admin/index/tickets', function(){
+//     return view('tickets');
+// });
+
+Route::get('/correosCTicket', function () {
+    return view('responderCorreosCT');
 });
 
-Route::post('/guardar','contactos@store');
+Route::post('/mostrarCorreoCTicket', 'Contactos@mostrarCorreoCTicket');
+
+Route::get('/correosSTicket', function () {
+    return view('responderCorreosST');
+});
+
+Route::post('/guardar','contactos@store'); //Metodo para agregar el mensaje del contacto

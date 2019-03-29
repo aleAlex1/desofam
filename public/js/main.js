@@ -4,6 +4,8 @@ app.controller('ctrl', function($scope, $http, $location){
   $scope.user={};
   $scope.confirm=true;
 
+
+
   $scope.guardar=function(){
     $http.post('/guardar',$scope.contacto).then(
         function(response){
@@ -15,8 +17,9 @@ app.controller('ctrl', function($scope, $http, $location){
         }, function(errorResponse){
               $scope.formuContacto.$setPristine();
               console.log("Lo hizo mal");
-            }
+        }
     );
+
   }
 
   $scope.guardarUsuario=function(){
@@ -48,6 +51,19 @@ app.controller('ctrl', function($scope, $http, $location){
     else{
       $scope.confirm=false;
     }
+  $scope.responder = function(id) {
+    console.log(id);
+    $http.post("/guardarUsuario",$scope.user).then(
+        function(response){
+          $scope.user={};
+          $scope.frmUser.$setPristine();
+          alert("Su mensaje ha sido enviado exitosamente");
+
+        }, function(errorResponse){
+              $scope.frmUser.$setPristine();
+              console.log("Lo hizo mal");
+            }
+    );
   }
 
 });

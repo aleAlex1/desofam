@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Contacto;
-
+use DB;
 use App\Http\Controllers\Contactos;
+
 
 class Contactos extends Controller
 {
@@ -17,7 +18,14 @@ class Contactos extends Controller
      */
     public function index()
     {
-        //
+      // Estaba probando esto
+      $ticketsitos=DB::table('contactos')
+      ->select('contactos.id','nombre','email','mensaje','estados.estado as estado','state', 'ticket_relacionado')
+      ->join('estados','state','=','estados.id')
+      ->where('state',0)
+      ->where('contactos.ticket_relacionado','>',0)
+      ->get();
+      return view('tickets',compact('ticketsitos'));
     }
 
     /**
@@ -43,7 +51,8 @@ class Contactos extends Controller
         $datos->nombre=$request->input('nombre');
         $datos->email=$request->input('email');
         $datos->mensaje=$request->input('mensaje');
-
+        $datos->ticket_relacionado=$request-> input('ticket_relacionado') ? : 0;
+        $datos->state=0;
         $datos->save();
     }
 
@@ -90,5 +99,21 @@ class Contactos extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function mostrarCorreoCTicket($id) {
+      $ticketPrevio=DB::table('contactos')
+      ->select('id','nombre','email','mensaje','estados.estado as estado','state', 'ticket_relacionado')
+      ->join('estados','state','=','estados.id')
+      ->where('state',0)
+      ->where('contactos.ticket_relacionado','=',$id)
+      ->get();
+      // $ticketReciente=DB::table('contactos')
+      // ->select('contactos.id','nombre','email','mensaje','estados.estado as estado','state', 'ticket_relacionado')
+      // ->join('estados','state','=','estados.id')
+      // ->where('state',0)
+      // ->where('contactos.ticket_relacionado','>',0)
+      // ->get();
+      return view('tickets')->with(compact('$ticketPrevio'));
     }
 }
