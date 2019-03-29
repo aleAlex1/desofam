@@ -35,6 +35,8 @@ Route::get('/correosCTicket', function () {
     return view('responderCorreosCT');
 });
 
+Route::post('/mostrarCorreoCTicket', 'Contactos@mostrarCorreoCTicket');
+
 Route::get('/correosSTicket', function () {
     return view('responderCorreosST');
 });

@@ -6,7 +6,7 @@
 @parent
 @section('panel')
 @parent
-<div class="adminShow col-lg-10">
+<div class="adminShow col-lg-10" ng-controller="ctrl">
   <table class="table table-hover col-lg-12">
     <thead class="thead-dark">
       <tr>

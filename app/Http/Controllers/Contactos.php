@@ -103,4 +103,20 @@ class Contactos extends Controller
     {
         //
     }
+
+    public function mostrarCorreoCTicket($id) {
+      $ticketPrevio=DB::table('contactos')
+      ->select('id','nombre','email','mensaje','estados.estado as estado','state', 'ticket_relacionado')
+      ->join('estados','state','=','estados.id')
+      ->where('state',0)
+      ->where('contactos.ticket_relacionado','=',$id)
+      ->get();
+      // $ticketReciente=DB::table('contactos')
+      // ->select('contactos.id','nombre','email','mensaje','estados.estado as estado','state', 'ticket_relacionado')
+      // ->join('estados','state','=','estados.id')
+      // ->where('state',0)
+      // ->where('contactos.ticket_relacionado','>',0)
+      // ->get();
+      return view('tickets')->with(compact('$ticketPrevio'));
+    }
 }

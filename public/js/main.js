@@ -43,4 +43,19 @@ app.controller('ctrl', function($scope, $http, $location){
     alert("Vas a eliminar el usuario "+id)
   }
 
+  $scope.responder = function(id) {
+    console.log(id);
+    $http.post("/guardarUsuario",$scope.user).then(
+        function(response){
+          $scope.user={};
+          $scope.frmUser.$setPristine();
+          alert("Su mensaje ha sido enviado exitosamente");
+
+        }, function(errorResponse){
+              $scope.frmUser.$setPristine();
+              console.log("Lo hizo mal");
+            }
+    );
+  }
+
 });
