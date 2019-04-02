@@ -104,19 +104,46 @@ class Contactos extends Controller
         //
     }
 
-    public function mostrarCorreoCTicket($id) {
+    public function guardarTicket(Request $request) {
+      $request->session()->put('id', $request->input('id'));
+      $id = $request->session()->get('id', 'default');
+      // $id = session('id');
+      return $id;
+    }
+
+    public function getTicket(){
+      $id = $request->session()->get('id', 'default');
+      return $id;
+    }
+
+    public function mostrarCorreoTicketPrevio(Request $request) {
+      $id = $request->input('ticketActual');
+
+      $idTicketRelacionado = DB::table('contactos')
+      ->select('ticket_relacionado')
+      ->where('contactos.id', $id)
+      ->first();
+
       $ticketPrevio=DB::table('contactos')
-      ->select('id','nombre','email','mensaje','estados.estado as estado','state', 'ticket_relacionado')
+      ->select('contactos.id','nombre','email','mensaje','estados.estado as estado','state', 'ticket_relacionado')
       ->join('estados','state','=','estados.id')
       ->where('state',0)
-      ->where('contactos.ticket_relacionado','=',$id)
+      ->where('contactos.id', $idTicketRelacionado->ticket_relacionado)
       ->get();
-      // $ticketReciente=DB::table('contactos')
-      // ->select('contactos.id','nombre','email','mensaje','estados.estado as estado','state', 'ticket_relacionado')
-      // ->join('estados','state','=','estados.id')
-      // ->where('state',0)
-      // ->where('contactos.ticket_relacionado','>',0)
-      // ->get();
-      return view('tickets')->with(compact('$ticketPrevio'));
+      //
+      // return View('responderCorreosCT',compact('ticketPrevio'));
+      return $ticketPrevio;
+      // return View::make('resources\views\responderCorreosCT.blade.php')->with('success', 'Data saved!');
+    }
+
+    public function mostrarCorreoTicketActual(Request $request) {
+      $id = $request->input('ticketActual');
+      $ticketReciente=DB::table('contactos')
+      ->select('contactos.id','mensaje','estados.estado as estado','state')
+      ->join('estados','state','=','estados.id')
+      ->where('state',0)
+      ->where('contactos.id', $id)
+      ->get();
+      return $ticketReciente;
     }
 }

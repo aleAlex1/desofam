@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-use App\Http\Requests;
-use App\User;
 
-class Usuarios extends Controller
+class responderCorreoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +13,7 @@ class Usuarios extends Controller
      */
     public function index()
     {
-        $groups=DB::table('grupos')
-        ->select('*')
-        ->where('id','>',0)
-        ->get();
-        return view('add', compact('groups'));
+        //
     }
 
     /**
@@ -41,12 +34,7 @@ class Usuarios extends Controller
      */
     public function store(Request $request)
     {
-        $data=new User();
-        $data->name=$request->input('name');
-        $data->email=$request->input('mail');
-        $data->password=encrypt($request->input('pass'));
-        $data->grupo=$request->input('group');
-        $data->save();
+        //
     }
 
     /**
@@ -94,36 +82,7 @@ class Usuarios extends Controller
         //
     }
 
-    public function getUsers(){
-
-      $usr= DB::table('users')
-      ->select('users.id','name','email','grupos.nombre as group')
-      ->join('grupos', 'grupos.id','=','users.grupo')
-      ->where('grupo','>',0)
-      ->get();
-      return view('show',compact('usr'));
+    public function responder() {
+      Mail::to('2016030891@upsin.edu.mx')->send();
     }
-
-    public function login(Request $request) {
-      $nombre = $request->input('user');
-      $res = DB::table('users')->select('name', 'password')->where('name', $nombre)->get();
-      // ->where([
-      //   ['users.name', $nombre],
-      //   ['users.password', $pass],
-      // ])->get();
-      // foreach($res as $user) {
-      //     return $user->password;
-      // }
-      return $res;
-    }
-
-    public function desencriptar(Request $request) {
-      // try {
-          $pass = Crypt::decrypt($request->input('pass'));
-      // } catch (DecryptException $e) {
-          //
-      // }
-      return $pass;
-    }
-
 }

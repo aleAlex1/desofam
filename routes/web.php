@@ -27,18 +27,26 @@ Route::get('/admin/index/show', 'Usuarios@getUsers')->name('showUsr');
 Route::get('/admin/index/correos', 'Correos@index')->name('mails');
 Route::get('/admin/index/tickets', 'Contactos@index')->name('ticketsitos');
 
-// Route::get('/admin/index/tickets', function(){
-//     return view('tickets');
-// });
+Route::post('/login', 'Usuarios@login');
+Route::post('/desencriptar', 'Usuarios@desencriptar');
+
+//INICIO TICKET
+Route::post('/guardarIdTicket', 'Contactos@guardarTicket');
+Route::post('/getTicket', 'Contactos@getTicket');
+Route::get('/correo/{id}', function ($id) {
+  // return 'id '.$id;
+  return view('responderCorreosCT')->with('id', $id);
+})->name('id');
 
 Route::get('/correosCTicket', function () {
     return view('responderCorreosCT');
 });
-
-Route::post('/mostrarCorreoCTicket', 'Contactos@mostrarCorreoCTicket');
-
+Route::post('/correoTicketPrevio', 'Contactos@mostrarCorreoTicketPrevio');
+Route::post('/correoTicketActual', 'Contactos@mostrarCorreoTicketActual');
 Route::get('/correosSTicket', function () {
     return view('responderCorreosST');
 });
+Route::post('/enviarCorreo', 'responderCorreoController@responder');
+//FIN TICKET
 
 Route::post('/guardar','contactos@store'); //Metodo para agregar el mensaje del contacto

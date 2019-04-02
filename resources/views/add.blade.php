@@ -35,7 +35,7 @@
     <button type="button" name="button" class="btn btn-danger" ng-click="limpiar()">Cancelar</button>
     <button type="button" name="button" class="btn btn-success" ng-click="guardarUsuario()">Guardar</button>
   </div>
-</form name="frmUser">
+</form><!--name="frmUser"-->
 @section('footer')
     @parent
     @endsection

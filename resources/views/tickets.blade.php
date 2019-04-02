@@ -28,7 +28,8 @@
         <td>{{$t->email}}</td>
         <td>{{$t->mensaje}}</td>
         <td>{{$t->estado}}</td>
-        <td><button type="button" name="btnEdit" class="btnResponder" ng-click="responder({{$t->id}})"></button></td>
+        <td><a href="/correo/{{$t->id}}"><button type="button" name="btnEdit" class="btnResponder" ></button></a></td><!--ng-click="mostrarCorreoCTicket({{$t->ticket_relacionado}})" -->
+        <!-- <td> <a href="/correo/{{$t->ticket_relacionado}}">sdfd</a> </td> -->
         <td><button type="button" name="btnDelete" class="btnDelete" ng-click="eliminar({{$t->id}})"></button></td>
       </tr>
       @endforeach
