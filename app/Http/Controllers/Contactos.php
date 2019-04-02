@@ -47,16 +47,29 @@ class Contactos extends Controller
     public function store(Request $request)
     {
         $datos=new Contacto();
+        if($request->input('ticket_relacionado')!=null){
+          if($datos->where('id', '=', $request->input('ticket_relacionado'))->count()>0){
+            $datos->nombre=$request->input('nombre');
+            $datos->email=$request->input('email');
+            $datos->mensaje=$request->input('mensaje');
+            $datos->state=0;
+            $datos->ticket_relacionado=$request-> input('ticket_relacionado') ? : 0;
+            $datos->save();
+            return 1;
+          }else{
+            return 0;
+          }
+        }
+        else{
+          $datos->nombre=$request->input('nombre');
+          $datos->email=$request->input('email');
+          $datos->mensaje=$request->input('mensaje');
+          $datos->state=0;
+          $datos->ticket_relacionado=$request-> input('ticket_relacionado') ? : 0;
+          $datos->save();
+          return 1;
+        }
 
-        $datos->nombre=$request->input('nombre');
-        $datos->email=$request->input('email');
-        $datos->mensaje=$request->input('mensaje');
-        $datos->ticket_relacionado=$request-> input('ticket_relacionado') ? : 0;
-
-
-        // $datos->ticket_relacionado=$request->input('ticket_relacionado');
-
-        $datos->save();
     }
 
     /**
