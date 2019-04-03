@@ -129,6 +129,7 @@ class Contactos extends Controller
       return $id;
     }
 
+    // De aquí
     public function mostrarCorreoTicketPrevio(Request $request) {
       $id = $request->input('ticketActual');
 
@@ -159,4 +160,5 @@ class Contactos extends Controller
       ->get();
       return $ticketReciente;
     }
+    // A aquí
 }
