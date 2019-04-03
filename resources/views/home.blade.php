@@ -75,7 +75,7 @@
     </div>
 
     <div class="bgimg-2 d-flex justify-content-center" id="portfolio">
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 19rem;">
         <img class="card-img-top" src="{{asset('images/sistema_geriatrico_logo.png')}}" alt="Card image cap">
         <div class="card-body">
           <h4>Sistema geriátrico</h4>
