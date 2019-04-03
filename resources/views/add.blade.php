@@ -62,7 +62,8 @@
     <button type="button" name="button" class="btn btn-danger" ng-click="limpiar()">Cancelar</button>
     <button type="button" name="button" class="btn btn-success" ng-click="guardarUsuario()" ng-disabled="!frmUser.$valid && !confirm">Guardar</button>
   </div>
-</form>
+</form><!--name="frmUser"-->
+<!-- </form> -->
 @section('footer')
     @parent
     @endsection

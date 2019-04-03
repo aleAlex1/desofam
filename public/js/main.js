@@ -1,25 +1,47 @@
 var app=angular.module('app', []);
 app.controller('ctrl', function($scope, $http, $location){
+
+  $scope.contacto = {};
+  $scope.enviar = {};
+  $scope.user = {};
+  $scope.ticketPrevio = {};
+  $scope.ticketActual = {};
+
+  $scope.login = function() {
+    $http.post('/login',$scope.user).then(
+        function(response){
+          // alert("Su mensaje ha sido enviado exitosamente");
+          console.log(response);
+          $scope.user.pass = response['data'][0]['password'];
+        }, function(errorResponse){
+              console.log("Lo hizo mal"+ errorResponse);
+        }
+    );
+  }
+
   $scope.contacto={};
   $scope.user={};
   $scope.confirm=true;
 
 
-
   $scope.guardar=function(){
     $http.post('/guardar',$scope.contacto).then(
         function(response){
-          $scope.contacto={};
-          $scope.formuContacto.$setPristine();
-          console.log("Si lo hizo bien");
-          alert("Su mensaje ha sido enviado exitosamente");
-
+          if(response.data==1){
+            $scope.contacto={};
+            $scope.formuContacto.$setPristine();
+            console.log("Si lo hizo bien");
+            alert("Su mensaje ha sido enviado exitosamente");
+          }
+          else{
+            alert("El ticket no existe en nuestros registros");
+          }
+          console.log(response);
         }, function(errorResponse){
               $scope.formuContacto.$setPristine();
               console.log("Lo hizo mal");
         }
     );
-
   }
 
   $scope.guardarUsuario=function(){
@@ -44,7 +66,7 @@ app.controller('ctrl', function($scope, $http, $location){
     alert("Vas a eliminar el usuario "+id)
   }
 
-  $scope.confirmar=function(){
+  $scope.confirmar=function() {
     if($scope.user.pass==$scope.user.confirm){
       $scope.confirm=true;
     }
@@ -56,18 +78,59 @@ app.controller('ctrl', function($scope, $http, $location){
     console.log(id);
     $http.post("/guardarUsuario",$scope.user).then(
         function(response){
-          $scope.user={};
-          $scope.frmUser.$setPristine();
-          alert("Su mensaje ha sido enviado exitosamente");
+          // console.log(response['data'][0]);
+          // angular.forEach(response['data'], function(value, key){
+          //    console.log(key + ': ' + value['nombre']);
+             // $scope.paciente.id = value['id'];
+
+             console.log(response);
+          // });
 
         }, function(errorResponse){
-              $scope.frmUser.$setPristine();
-              console.log("Lo hizo mal");
+              console.log(errorResponse);
             }
     );
   }
 
+  $scope.mostrarTicketPrevio = function(id) {
+    console.log(id);
+    $scope.contacto.ticketActual = id;
+    $http.post("/correoTicketPrevio", $scope.contacto).then(
+        function(response){
+          $scope.ticketPrevio = {};
+          // console.log(response['data'][0]);
+          angular.forEach(response['data'], function(value, key){
+             console.log(key + ': ' + value['nombre']);
+             $scope.ticketPrevio.id = value['id'];
+             $scope.ticketPrevio.nombre = value['nombre'];
+             $scope.ticketPrevio.correo = value['email'];
+             $scope.ticketPrevio.mensajePrevio = value['mensaje'];
+             });
+             // console.log(response);
+             $http.post("/correoTicketActual", $scope.contacto).then(
+                 function(response){
+
+                   // console.log(response['data'][0]);
+                   angular.forEach(response['data'], function(value, key){
+                      console.log(key + ': ' + value['mensaje']);
+                      $scope.ticketActual.id = value['id'];
+                      $scope.ticketActual.mensajeReciente = value['mensaje'];
+                      $scope.contacto = {};
+                      // console.log(response);
+                   });
+
+                 }, function(errorResponse){
+                       console.log(errorResponse);
+                     }
+                   );
+        }, function(errorResponse){
+              console.log(errorResponse);
+            }
+    );
+  };
+
 });
+
 app.controller('ctrlEdit', function($scope, $http, $window){
 
   $scope.confirm=true;

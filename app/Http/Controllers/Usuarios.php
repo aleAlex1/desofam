@@ -141,6 +141,30 @@ class Usuarios extends Controller
       return view('show',compact('usr'));
     }
 
+
+    public function login(Request $request) {
+      $nombre = $request->input('user');
+      $res = DB::table('users')->select('name', 'password')->where('name', $nombre)->get();
+      // ->where([
+      //   ['users.name', $nombre],
+      //   ['users.password', $pass],
+      // ])->get();
+      // foreach($res as $user) {
+      //     return $user->password;
+      // }
+      return $res;
+    }
+
+    public function desencriptar(Request $request) {
+      // try {
+          $pass = Crypt::decrypt($request->input('pass'));
+      // } catch (DecryptException $e) {
+          //
+      // }
+      return $pass;
+    }
+
+
     public function editar($id)
     {
       $groups=DB::table('grupos')
