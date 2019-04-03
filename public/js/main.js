@@ -28,7 +28,7 @@ app.controller('ctrl', function($scope, $http, $location){
           $scope.user={};
           $scope.frmUser.$setPristine();
           alert("Usuario creado");
-
+          location.reload();
         }, function(errorResponse){
               $scope.frmUser.$setPristine();
               console.log("Lo hizo mal");

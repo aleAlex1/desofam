@@ -47,10 +47,18 @@ class Usuarios extends Controller
         $this->validate($request,[
           'mail' => 'unique:users,email'
         ]);
+        if($request->input('group')==1){
+          $admin = User::where('grupo',1)->count(); //contar administradores
+          if($admin+1 ==2){
+            \DB::table('grupos')
+              ->where('id', 1)
+              ->update(['status' => 1]);
+          }
+        }
         $data=new User();
         $data->name=$request->input('name');
         $data->email=$request->input('mail');
-        $data->password=encrypt($request->input('pass'));
+        $data->password=encrypt($request->input('pass')); //encriptar contraseña
         $data->grupo=$request->input('group');
         $data->save();
         $id = $data->id;
@@ -62,7 +70,6 @@ class Usuarios extends Controller
         $emp->usuario=$id;
         $emp->save();
 
-        return Redirect::back()->withInput(Input::all());
     }
 
     /**
@@ -177,7 +184,7 @@ class Usuarios extends Controller
           if($admin+1==2){
             \DB::table('grupos')
               ->where('id', $request->input('group'))
-              ->update(['status' => $request->input('group')]);
+              ->update(['status' => 1]);
           }
         }//if($request->input('group')==1)
 
@@ -187,6 +194,9 @@ class Usuarios extends Controller
             return redirect('editarUser')->with('error', 'No se puede dejar sin administrador');
           }
           else{
+            \DB::table('grupos')
+              ->where('id', 1)
+              ->update(['status' => 0]);
             \DB::table('users')
               ->where('id', $id)
               ->update(['grupo' => $request->input('group')]);
